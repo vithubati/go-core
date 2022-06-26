@@ -9,6 +9,7 @@ import (
 )
 
 func TestNewBasicAuthenticator(t *testing.T) {
+	t.Parallel()
 	bAuth := &basicAuthenticator{
 		Username: "",
 		Password: "password",
@@ -29,6 +30,7 @@ func TestNewBasicAuthenticator(t *testing.T) {
 }
 
 func TestBasicAuthAuthenticate(t *testing.T) {
+	t.Parallel()
 	auth, _ := NewBasicAuthenticator("foo", "bar")
 	assert.NotNil(t, auth)
 	assert.Equal(t, auth.AuthenticationType(), AuthTypeBasic)
