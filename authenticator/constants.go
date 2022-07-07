@@ -3,7 +3,8 @@ package authenticator
 const (
 	//  supported authentication types
 	AuthTypeBasic       = "Basic"
-	AuthTypeBearerToken = "bearerToken"
+	AuthTypeBearerToken = "BearerToken"
+	AuthTypeNoAuth      = "NoAuth"
 
 	// common errors
 	ErrorMsgProMissing    = "the %s required but was not specified"
