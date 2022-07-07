@@ -29,13 +29,13 @@ This repository contains implementation of some core go libs
 ### Http Client
 1.  Creating a client
 ```go
-    auth, _ := authenticator.NewBearerTokenAuthenticator("Test-TOREN")
+    auth, _ := authenticator.NewBearerTokenAuthenticator("Test-TOKEN")
     client := New(WithAuthenticator(auth))
 ```
 
 2.  Creating a request
 ```go
-    auth, _ := authenticator.NewBearerTokenAuthenticator("Test-TOREN")
+    auth, _ := authenticator.NewBearerTokenAuthenticator("Test-TOKEN")
     client := New(WithAuthenticator(auth))
     params := url.Values{}
     params.Set("limit", "5")
