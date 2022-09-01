@@ -102,7 +102,9 @@ func (c *client) request(url, method string, body interface{}, params url.Values
 	r := c.Client.R()
 	r.Method = method
 	r.URL = url
-	r.QueryParam = params
+	if params != nil {
+		r.QueryParam = params
+	}
 	r.Body = body
 	c.authenticator.Authenticate(r)
 	return r
