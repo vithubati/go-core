@@ -8,8 +8,7 @@ import (
 // basicAuthenticator takes a user-supplied username and password, and adds
 // them to requests via an Authorization header of the form:
 //
-//			Authorization: Basic <encoded username and password>
-//
+//	Authorization: Basic <encoded username and password>
 type basicAuthenticator struct {
 	// Username is the user-supplied basic auth username [required].
 	Username string
@@ -38,9 +37,9 @@ func (basicAuthenticator) AuthenticationType() string {
 
 // Authenticate adds basic authentication information to a request.
 //
-//Basic Authorization will be added to the request's headers in the form:
+// Basic Authorization will be added to the request's headers in the form:
 //
-//		Authorization: Basic encoded username and password>
+//	Authorization: Basic encoded username and password>
 func (a *basicAuthenticator) Authenticate(request *resty.Request) {
 	request.SetBasicAuth(a.Username, a.Password)
 }

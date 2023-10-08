@@ -5,9 +5,10 @@ import (
 	"github.com/go-resty/resty/v2"
 )
 
-//.bearerTokenAuthenticator will take a user-supplied bearer token and adds
+// .bearerTokenAuthenticator will take a user-supplied bearer token and adds
 // it to requests via an Authorization header of the form:
-//		Authorization: Bearer <bearer-token>
+//
+//	Authorization: Bearer <bearer-token>
 type bearerTokenAuthenticator struct {
 	// auth token scheme type in the HTTP request.For Example:
 	//	Authorization: <auth-scheme-value-set-here> <auth-token-value>
@@ -37,7 +38,6 @@ func (*bearerTokenAuthenticator) AuthenticationType() string {
 // Authenticate adds bearer authentication information to the request.
 // The bearer token will be added to the request's headers in the form:
 // Authorization: Bearer <bearer-token>
-//
 func (a *bearerTokenAuthenticator) Authenticate(request *resty.Request) {
 	request.SetAuthScheme(a.AuthScheme)
 	request.SetAuthToken(a.BearerToken)

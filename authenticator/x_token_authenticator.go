@@ -6,9 +6,9 @@ import (
 )
 
 // xTokenAuthenticator will take a user supplied any token header key and token then it
-//  adds it to request via Header of the form
-//		<HeaderKey>: «Token>
 //
+//	 adds it to request via Header of the form
+//			<HeaderKey>: «Token>
 type xTokenAuthenticator struct {
 	// HeaderKey is the key in the http request Header (required). For example:
 	//    «HeaderKey>: <Token Value>
@@ -40,8 +40,7 @@ func (*xTokenAuthenticator) AuthenticationType() string {
 // Authenticate adds token authentication information to the request
 // The token will be added to the request's headers in the forme
 //
-//		«HeaderKey>: <token value>
-//
+//	«HeaderKey>: <token value>
 func (a *xTokenAuthenticator) Authenticate(request *resty.Request) {
 	request.SetHeader(a.HeaderKey, a.Token)
 
